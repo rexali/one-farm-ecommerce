@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <script src="main.js"></script>
+    <style>
+        /* ul {
+            list-style-position:inside;
+            list-style-type:square;
+            list-style-image: url(./images/rednews.png);
+        } */
+        img,ul,.btn{
+          display: inline-block;
+        }
+        .btn{
+          float: right;
+        }
+        </style>
+</head>
+<body>
+
+<div>
+  <img src="images/rednews.png" alt="pic" style="max-width:100%"> <ul><li>name</li><li>summary</li><li>Description</li></ul><button class="btn">Delete</button>
+</div>
+<div id="new">
+
+</div>
+<script>
+  var div = document.createElement("div");
+  var img = document.createElement("img");
+  var ul = document.createElement("ul");
+  var btn = document.createElement("button");
+  var nameLi = document.createElement("li");
+  var priceLi = document.createElement("li");
+  var descriptionLi = document.createElement("li");
+  var nameText = document.createTextNode("name");
+  var priceText = document.createTextNode("price");
+  var descriptionText = document.createTextNode("description");
+  var buttonText = document.createTextNode("Delete");
+
+  img.setAttribute("src","images/rednews.png");
+  img.style.maxWidth="100%";
+  btn.className="btn";
+
+  nameLi.appendChild(nameText);
+  descriptionLi.appendChild(descriptionText);
+  priceLi.appendChild(priceText);
+  btn.appendChild(buttonText);
+
+  ul.appendChild(nameLi);
+  ul.appendChild(descriptionLi);
+  ul.appendChild(priceLi);
+  
+
+  div.appendChild(img);
+  div.appendChild(ul);
+  div.appendChild(btn);
+
+  document.getElementById("new").appendChild(div);
+
+</script>
+        
+
+              <form >
+                <script src="https://js.paystack.co/v1/inline.js"></script>
+                <button type="button" onclick="payWithPaystack()"> Pay </button> 
+              </form>
+              
+              <script>
+                function payWithPaystack(){
+                  var handler = PaystackPop.setup({
+                    key: 'pk_test_72db34e08d9271f76c97ccd2d507a49047d4d9e6',
+                    email: 'customer@email.com',
+                    amount: 10000,
+                    currency: "NGN",
+                    ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+                    metadata: {
+                       custom_fields: [
+                          {
+                              display_name: "Mobile Number",
+                              variable_name: "mobile_number",
+                              value: "+2348012345678"
+                          }
+                       ]
+                    },
+                    callback: function(response){
+                        alert('success. transaction ref is ' + response.reference);
+                    },
+                    onClose: function(){
+                        alert('window closed');
+                    }
+                  });
+                  handler.openIframe();
+                }
+              </script>
+                <!-- <form id="paystack-card-form">
+                    <input type="text" data-paystack="number" placeholder="card number"><br>
+                    <input type="text" data-paystack="cvv" placeholder="cvv">  <br>          
+                    <input type="text" data-paystack="expiryMonth" placeholder="expiry Month"><br>
+                    <input type="text"  data-paystack="expiryYear" placeholder="expiry Year"><br>
+                    <button type="submit" data-paystack="submit">Submit</button>
+                  </form>
+            
+            
+            <script>
+            // Initialize paystack object
+            var paystack;
+            Paystack.init({
+              form: "paystack-card-form", // Form ID
+              access_code: 'd5gtr5gnex'   // You should programmatically pass the access
+                                          // code via Ajax or a server variable. Note that
+                                          // the access code can only be used once. 
+            }).then(function(returnedObj){
+              paystack = returnedObj;
+            }).catch(function(error){
+              console.log("There was an error loading Paystack", error);
+            });
+            
+            $("#paystack-card-form").submit(function(e){
+              e.preventDefault();
+              // You are to programmatically pass the pin provided by your custoemr
+              // to this function
+              // It gets all the card fields from the data-paystack input fields
+              alert("welcome");
+              paystack.card.charge({
+                pin: readPin() // Called a function that returns the optional pin value
+              }).then(function(response){
+                console.log(response);
+              }, function(error){
+                console.log(error);
+              });
+            });
+            
+            </script> -->
+</body>
+</html>

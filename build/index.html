@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Page Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="/styles/main.css"/>
+    <link rel="stylesheet" media="screen and (max-width:600px)" href="/styles/main.css"/>
+    <link rel="stylesheet" media="screen and (min-width:600px)" href="/styles/main.css"/>
+    <link rel="stylesheet" media="screen and (min-width:768px)" href="/styles/main.css"/>
+    <link rel="stylesheet" media="screen and (min-width:992px)" href="/styles/main.css"/>
+    <link rel="stylesheet" media="screen and (min-width:1024px)" href="/styles/main.css"/>
+
+</head>
+<body>
+<!-- Header -->
+<div class="header">
+    <h1>Website Name and Logo</h1>
+</div>
+
+<!-- Navigation Bar -->
+<div class="navbar">
+    <button><a onclick="openNav()">|||</a></button>
+    <button id="he" class="tablink" onclick="displayTab(event, 'home')">Home</button>
+
+    <button id="at" class="tablink" onclick="displayTab(event, 'about')">Favourite</button>
+
+    <button id="ct" class="tablink" onclick="displayTab(event, 'contact')">Saved</button>
+
+    <button id="dd" class="tablink" onclick="displayTab(event, 'download')">Basket</button>
+
+    <button id="pt" class="tablink" onclick="displayTab(event, 'project')">Login</button>
+
+</div>
+
+<div id = "mysidenav" class='sidenav'>
+    <a href="javascript:void(0)" class="closebutton" style="" onclick="closeNav()"> &times;</a>
+    <a align="center">OneFarm</a>
+    <a href="#"  onclick="closeNav()">Farm Produce</a>
+    <a href="#" onclick="closeNav()">Farm Services</a>
+    <a href="#"  onclick="closeNav()">Farm Tools</a>
+    <a href="#"  onclick="closeNav()">Farm Equipments</a>
+    <a href="#"  onclick="closeNav()">Farm Manures</a>
+    <a href="#"  onclick="closeNav()">Farm Fertilizers</a>
+    <a href="#"  onclick="closeNav()">Farm Animals</a>
+</div>
+<div id="main"></div>
+
+<!-- Tab contents -->
+<div id="home" class="tabcontent">
+
+    <!-- this is first row-->
+
+    <div class="row-1">
+        <div class="column-1 card">
+            <h3>Farm Produce</h3>
+        </div>
+
+        <div class="scrollProducts" id="root"></div>
+
+        <div class="scrollh">
+
+            <div class="card" style="width:150px; height:150px">
+                <img src="images/rednews.png" style="max-width:100%;">
+                <div class="container" style="text-align:center">
+                    <h7>Aliyu Bello<br><span>Geologist</span></h7>
+                </div>
+
+
+            </div>
+            <div class="card" style="width:150px; height:150px">
+                <img src="images/rednews.png" style="max-width:100%;">
+                <div class="container" style="text-align:center">
+                    <h7>Aliyu Bello<br><span>Geologist</span></h7>
+                </div>
+            </div>
+
+            <div class="card" style="width:150px; height:150px">
+                <img src="images/rednews.png" style="max-width:100%;">
+                <div class="container" style="text-align:center">
+                    <h7>Aliyu Bello<br><span>Geologist</span></h7>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<!--this is second row-->
+    <div class="row-2">
+        <div class="column-1 card">
+            <h3>Farm Services</h3>
+        </div>
+        <div class="scrollh">
+
+            <div class="card" style="width:150px; height:150px">
+                <img src="images/rednews.png" style="max-width:100%;">
+                <div class="container" style="text-align:center">
+                    <h7>Aliyu Bello<br><span>Geologist</span></h7>
+                </div>
+
+            </div>
+            <div class="card" style="width:150px; height:150px">
+                <img src="images/rednews.png" style="max-width:100%;">
+                <div class="container" style="text-align:center">
+                    <h7>Aliyu Bello<br><span>Geologist</span></h7>
+                </div>
+            </div>
+
+            <div class="card" style="width:150px; height:150px">
+                <img src="images/rednews.png" style="max-width:100%;">
+                <div class="container" style="text-align:center">
+                    <h7>Aliyu Bello<br><span>Geologist</span></h7>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<!--third row-->
+    <div class="row-3">
+        <div class="column-1 card">
+            <h3>Farm Tools</h3>
+        </div>
+        <div class="scrollh">
+
+            <div class="card" style="width:150px; height:150px">
+                <img src="images/rednews.png" style="max-width:100%;">
+                <div class="container" style="text-align:center">
+                    <h7>Aliyu Bello<br><span>Geologist</span></h7>
+                </div>
+
+            </div>
+            <div class="card" style="width:150px; height:150px">
+                <img src="images/rednews.png" style="max-width:100%;">
+                <div class="container" style="text-align:center">
+                    <h7>Aliyu Bello<br><span>Geologist</span></h7>
+                </div>
+            </div>
+
+            <div class="card" style="width:150px; height:150px">
+                <img src="images/rednews.png" style="max-width:100%;">
+                <div class="container" style="text-align:center">
+                    <h7>Aliyu Bello<br><span>Geologist</span></h7>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+<!-- fourth row-->
+    <div class="row-4">
+        <div class="column-1 card">
+            <h3>Farm Equipments</h3>
+        </div>
+        <div class="scrollh">
+
+            <div class="card" style="width:150px; height:150px">
+                <img src="images/rednews.png" style="max-width:100%;">
+                <div class="container" style="text-align:center">
+                    <h7>Aliyu Bello<br><span>Geologist</span></h7>
+                </div>
+
+            </div>
+            <div class="card" style="width:150px; height:150px">
+                <img src="images/rednews.png" style="max-width:100%;">
+                <div class="container" style="text-align:center">
+                    <h7>Aliyu Bello<br><span>Geologist</span></h7>
+                </div>
+            </div>
+
+            <div class="card" style="width:150px; height:150px">
+                <img src="images/rednews.png" style="max-width:100%;">
+                <div class="container" style="text-align:center">
+                    <h7>Aliyu Bello<br><span>Geologist</span></h7>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<!--fifth row-->
+    <div class="row-5">
+        <div class="column-1 card">
+            <h3>Farm Manures</h3>
+        </div>
+        <div class="scrollh">
+
+            <div class="card" style="width:150px; height:150px">
+                <img src="images/rednews.png" style="max-width:100%;">
+                <div class="container" style="text-align:center">
+                    <h7>Aliyu Bello<br><span>Geologist</span></h7>
+                </div>
+
+            </div>
+            <div class="card" style="width:150px; height:150px">
+                <img src="images/rednews.png" style="max-width:100%;">
+                <div class="container" style="text-align:center">
+                    <h7>Aliyu Bello<br><span>Geologist</span></h7>
+                </div>
+            </div>
+
+            <div class="card" style="width:150px; height:150px">
+                <img src="images/rednews.png" style="max-width:100%;">
+                <div class="container" style="text-align:center">
+                    <h7>Aliyu Bello<br><span>Geologist</span></h7>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<!-- sixth row-->
+    <div class="row-6">
+        <div class="column-1 card">
+            <h3>Farm Fertilizers</h3>
+        </div>
+        <div class="scrollh">
+
+            <div class="card" style="width:150px; height:150px">
+                <img src="images/rednews.png" style="max-width:100%;">
+                <div class="container" style="text-align:center">
+                    <h7>Aliyu Bello<br><span>Geologist</span></h7>
+                </div>
+
+            </div>
+            <div class="card" style="width:150px; height:150px">
+                <img src="images/rednews.png" style="max-width:100%;">
+                <div class="container" style="text-align:center">
+                    <h7>Aliyu Bello<br><span>Geologist</span></h7>
+                </div>
+            </div>
+
+            <div class="card" style="width:150px; height:150px">
+                <img src="images/rednews.png" style="max-width:100%;">
+                <div class="container" style="text-align:center">
+                    <h7>Aliyu Bello<br><span>Geologist</span></h7>
+                </div>
+
+            </div>
+        </div>
+    </div>
+<!--seventh row -->
+    <div class="row-7">
+        <div class="column-1 card">
+            <h3>Farm Animals</h3>
+        </div>
+        <div class="scrollh">
+
+            <div class="card" style="width:150px; height:150px">
+                <img src="images/rednews.png" style="max-width:100%;">
+                <div class="container" style="text-align:center">
+                    <h7>Aliyu Bello<br><span>Geologist</span></h7>
+                </div>
+
+            </div>
+            <div class="card" style="width:150px; height:150px">
+                <img src="images/rednews.png" style="max-width:100%;">
+                <div class="container" style="text-align:center">
+                    <h7>Aliyu Bello<br><span>Geologist</span></h7>
+                </div>
+            </div>
+
+            <div class="card" style="width:150px; height:150px">
+                <img src="images/rednews.png" style="max-width:100%;">
+                <div class="container" style="text-align:center">
+                    <h7>Aliyu Bello<br><span>Geologist</span></h7>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<div id="about" class="tabcontent card">
+    <h2>About</h2>
+    <p>Some text..</p>
+    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco.</p>
+    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco.</p>
+    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco.</p>
+    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco.</p>
+
+</div>
+
+<div id="contact" class="tabcontent">
+    <h2>Contact</h2>
+    <p>Some text..</p>
+    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco.</p>
+    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco.</p>
+    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco.</p>
+    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco.</p>
+
+</div>
+
+<div id="download" class="tabcontent">
+    <h2>Download</h2>
+    <p>Some text..</p>
+    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco.</p>
+    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco.</p>
+    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco.</p>
+    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco.</p>
+
+</div>
+
+<div id="project" class="tabcontent">
+    <h2>Project</h2>
+    <p>Some text..</p>
+    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco.</p>
+    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco.</p>
+    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco.</p>
+    <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        quis nostrud exercitation ullamco.</p>
+
+</div>
+
+
+<!-- Footer -->
+<div class="footer">
+
+    <button id="ft"><a href="#">Link 1</a></button>
+    <button id="sd"><a href="#">Link 2</a></button>
+    <button id="td"><a href="#">Link 3</a></button>
+    <button id="fr"><a href="#">Link 4</a></button>
+
+</div>
+
+<div class="bottommenu">
+    <a href="#">Home</a>
+    <a href="#">News</a>
+    <a href="#">Contact</a>
+    <a href="#">About</a>
+    <a href="#">Product</a>
+    <a href="#">Sevices</a>
+    <a href="#">Forum</a>
+    <a href="#">Blog</a>
+</div>
+
+<script src="/scripts/main.js"></script>
+</body>
+</html>

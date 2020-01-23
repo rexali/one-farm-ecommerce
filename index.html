@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>One Farm</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- main css -->
+    <link rel="stylesheet" href="./styles/main.css" />
+    <!-- Load jQuery and Paystack JS into your page -->
+    <script src="https://code.jquery.com/jquery.12.4.min.js"></script>
+    <!-- <script src="https://js.paystack.co/v1/paystack.js"></script> -->
+    <script src="https://js.paystack.co/v1/inline.js"></script>
+    <!-- <link rel="stylesheet" media="screen and (max-width:600px)" href="/styles/main.css"/>
+    <link rel="stylesheet" media="screen and (min-width:600px)" href="/styles/main.css"/>
+    <link rel="stylesheet" media="screen and (min-width:768px)" href="/styles/main.css"/>
+    <link rel="stylesheet" media="screen and (min-width:992px)" href="/styles/main.css"/>
+    <link rel="stylesheet" media="screen and (min-width:1024px)" href="/styles/main.css"/> -->
+
+</head>
+
+
+<body>
+
+    <!-- Side navigation for categories -->
+    <div id="mysidenav" class='sidenav'>
+        <div style="margin-bottom:10px">
+            <a href="." style="font-size:30px; color: green; display: inline;">One Farm</a>
+            <a href="javascript:void(0)" style="float:right; color:red; display: inline;" class="closebutton" onclick="closeNav()">
+                &times;</a>
+            <hr>
+        </div>
+        <div w3-include-html="navheader.html"></div>
+        <p style="color:darkviolet" id="sRoot"></p>
+        <hr>
+        <a href="#" onclick="closeNav()">Farm Produce</a>
+        <a href="#" onclick="closeNav()">Farm Services</a>
+        <a href="#" onclick="closeNav()">Farm Tools</a>
+        <a href="#" onclick="closeNav()">Farm Equipments</a>
+        <a href="#" onclick="closeNav()">Farm Manures</a>
+        <a href="#" onclick="closeNav()">Farm Fertilizers</a>
+        <a href="#" onclick="closeNav()">Farm Animals</a>
+        <hr>
+        <a href="#" onclick="displayTab(event, 'login')">Sign up</a>
+        <a href="#" onclick="displayTab(event, 'login')">Log in</a>
+        <a href="#" onclick="closeNav()" style="display:none" id="logOut">Log out</a>
+        <a href="#" class="tablink" onclick="displayTab(event, 'about')">About us</a>
+        <a href="#" class="tablink" onclick="displayTab(event, 'careers')">Careers</a>
+        <a href="#" class="tablink" onclick="displayTab(event, 'sell')">Sell</a>
+        <a href="#" class="tablink" onclick="displayTab(event, 'hire')">Hire</a>
+        <hr>
+
+    </div>
+    <div id="main"></div>
+
+    <!-- Header -->
+    <div class="header">
+        <h1>One Farm</h1>
+        <p>Mission, Vission & Values</p>
+    </div>
+
+    <!-- Navigation Bar -->
+
+    <div class="topmenu">
+            <!-- <a href="#">OneFarm</a> -->
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Products</a>
+            <!-- <a href="#">Deals</a> -->
+            <!-- <a href="#">Stores</a> -->
+            <a href="#">Favourite</a>
+            <!-- <a href="#">Category</a> -->
+            <a href="#" style="float:right">Cart</a>
+            <a href="#" style="float:right">Your Account</a>
+            <!-- <a href="#">Blog</a> -->
+    </div>
+    
+
+    <div class="navbar">
+        <button style="flex-shrink:1" onclick="openNav()"><i class="fa fa-reorder icon"></i></button>
+        <button id="he" class="tablink" onclick="displayTab(event, 'home')"><i class="fa fa-home icon"></i> Home</button>
+        <button id="ct" class="tablink" onclick="displayTab(event, 'saved')"><i class="fa fa-heart icon"></i> Saved</button>
+        <button id="dd" class="tablink" onclick="displayTab(event, 'basket')"><i class="fa fa-shopping-basket icon"></i>
+            Cart <span id="cartCount" style="color:red"></span></button>
+        <!-- <button id="pt" class="tablink" onclick="displayTab(event, 'login')">Login</button> -->
+    </div>
+
+    <!-- Tab contents -->
+    <div id="home" class="tabcontent">
+
+        <!-- <div class="scrollItems" id="root"></div> -->
+        <!-- this is first row-->
+
+        <div class="row-1">
+
+            <div class="column card">
+                <h3>Farm Produce <span style="float:right;color:green;font-size:10px">View more</span></h3>
+
+            </div>
+
+            <div class="scrollItems" id="rootFp"></div>
+            
+
+        </div>
+        <!--this is second row-->
+        <div class="row-2">
+                
+            <div class="column card">
+                <h3>Farm Services<span style="float:right;color:green;font-size:10px">View more</span></h3>
+            </div>
+            <div class="scrollItems" id="rootFs"></div>
+        </div>
+
+        <!--third row-->
+        <div class="row-3">
+            <div class="column card">
+                <h3>Farm Tools<span style="float:right;color:green;font-size:10px">View more</span></h3>
+                
+            </div>
+            <div class="scrollItems" id="rootFt"></div>
+
+        </div>
+
+        <!-- fourth row-->
+        <div class="row-4">
+            <div class="column card">
+                <h3>Farm Equipments<span style="float:right;color:green;font-size:10px">View more</span></h3>
+
+            </div>
+            <div class="scrollItems" id="rootFe"></div>
+
+        </div>
+        <!--fifth row-->
+        <div class="row-5">
+            <div class="column card">
+                <h3>Farm Manures<span style="float:right;color:green;font-size:10px">View more</span></h3>
+
+            </div>
+            <div class="scrollItems" id="rootFm"></div>
+
+
+        </div>
+        <!-- sixth row-->
+        <div class="row-6">
+            <div class="column card">
+                <h3>Farm Fertilizers<span style="float:right;color:green;font-size:10px">View more</span></h3>
+            </div>
+               
+            <div class="scrollItems" id="rootFf"></div>
+
+        </div>
+        <!--seventh row -->
+        <div class="row-7">
+            <div class="column card">
+                <h3>Farm Animals<span style="float:right;color:green;font-size:10px">View more</span></h3>
+                
+            </div>
+            <div class="scrollItems" id="rootFa"></div>
+
+        </div>
+
+
+    </div>
+
+
+
+        <!-- <div id="order-item-detail" class="tabcontent">
+        <h2>Order Items</h2>
+        <p id="order-item-detail">Some text..</p>
+        <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco.</p>
+        </div> -->
+
+        <div id="saved" class="tabcontent">
+            <h2>Saved Items</h2>
+            <p>Some text..</p>
+            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco.</p>
+        </div>
+
+        <!-- Tab for cart or basket -->
+        <div id="basket" class="tabcontent">
+            <h2 id="bc" style="text-align:center;">Cart</h2>
+            <div id="cartTotal" style="display:none;">Total(NGN): <span style="float:right" id="totalCart">0</span><hr></div>
+            <div id="cartSection" style="text-align:center;"><button id="checkoutButton" style="display:none;" onclick="payWithPaystack()">Pay</button></div>
+        </div>
+
+
+        <!-- Hire tabcontent -->
+        <div id="hire" class="tabcontent">
+            <h2>Hire</h2>
+            <p style="color:darkviolet" id="sRoot">Welcome</p>
+            <hr>
+            <p>Some text..</p>
+            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco.</p>
+
+        </div>
+
+        <!-- About Us tabcontent -->
+        <div id="about" class="tabcontent">
+            <h2>About</h2>
+            <p>Some text..</p>
+            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco.</p>
+        </div>
+
+        <!-- Careers tabcontent -->
+        <div id="careers" class="tabcontent">
+            <h2>Careers</h2>
+            <p>Some text..</p>
+            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,
+                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                quis nostrud exercitation ullamco.</p>
+        </div>
+
+        <!-- Here is the tab for detail of the product or item -->
+        <div id="detail" class="tabcontent">
+
+            <h2 id="namep"> Detail of the Product </h2>
+            <p><img src="" alt="pic" id="imgp"></p>
+            <p id="pricep">Loading...</p>
+            <p id="summaryp">Loading...</p>
+            <p id="detailp">Loading...</p>
+
+        </div>
+
+        <!-- Here is the checkout form that link the cart -->
+        <div id="checkout" class="tabcontent">
+
+            <h2 style="text-align:center">Checkout Form</h2>
+
+        </div>
+
+        <!-- Become a seller form -->
+        <div id="sell" class="tabcontent">
+            <h2 style="text-align:center">Become a Seller</h2>
+            <form name="sellerForm" id="myForm" enctype="" style="text-align:center">
+                <div id="sellerRoot"></div>
+                <div>
+                    <label>Seller's Name: </label><br>
+                    <input type="text" name="sName" placeholder="Enter your full name"><br>
+                </div>
+                <div>
+                    <label>Seller's Address: </label><br>
+                    <input type="text" name="sAddress" placeholder="Enter your contact address"><br>
+                </div>
+
+                <div>
+                    <label>Seller's Phone: </label><br>
+                    <input type="tel" name="sPhone" placeholder="Enter your phone number">
+
+                </div>
+
+                <div>
+                    <label>Seller's Email: </label><br>
+                    <input type="email" name="sEmail" placeholder="Enter your email">
+                </div>
+
+
+                <div>
+                    <label>Product's Name:</label><br>
+                    <input type="text" name="pName" placeholder="enter your product or service name">
+                </div>
+
+                <div>
+                    <label>Product's Unit Price: </label><br>
+                    <input type="number" name="pPrice" placeholder="enter price of the product">
+                </div>
+
+                <div>
+                    <label>Product's Quantity:</label><br>
+                    <input type="number" name="pQuantity" placeholder="enter quantity available">
+                </div>
+
+                <div>
+                    <label>Product's Image: </label><br>
+                    <input type="file" name="fileToUpload" id="fileInput" onchange="uploadFile()">
+                    <img src="" alt="Your picture" id="yourImage" style="display:none; text-align:center"><br>
+                    <span id="imageResult" style="color:red"></span>
+                </div>
+                <div>
+                    <label>Product's Category:</label><br>
+                    <input type="text" name="pCategory" placeholder="select category">
+                </div>
+
+                <div>
+                    <label>Product's Sub-category: </label><br>
+                    <input type="text" name="pSubCategory" placeholder="select sub-category">
+                </div>
+
+                <div>
+                    <label>Product's Short Description: </label><br>
+                    <input type=text name="pSummary" placeholder="give brief description of the product">
+                </div>
+
+                <div>
+                    <label>Product's Full Description: </label><br>
+                    <input type="text" name="pDetail" placeholder="give detail description of the product">
+                </div>
+                <div>
+                    <input type="button" id="sellerSend" onclick="sellerRecord()" name="submit" value="Submit"><input
+                        type="reset" value="Reset">
+                </div>
+            </form>
+
+        </div>
+
+        <!-- login and sign up form are here-->
+        <div id="login" class="tabcontent" style="text-align:center;">
+
+            <!-- The section for log in form for user -->
+            <div class="loginForm" id="log-in">
+                <h2>Log In</h2>
+                <div id="logInRoot" style="color:rebeccapurple"></div>
+                <!-- Form for users or customer to log in -->
+                <form name="logInUserForm">
+                    <div>
+                        <label>Email: </label><br>
+                        <input type="email" class="input" style="width:100%" name="cEmail" placeholder="Enter email"><br>
+                    </div>
+                    <div>
+                        <label>Password: </label><br>
+                        <input type="password" style="width:100%" class="input" name="cPassword" placeholder="Enter your password"><br>
+                    </div>
+
+                    <input type="button" name="submit" value="Login" onclick="logInUser()">
+                    <p>Have no account already? <a href="#" onclick="showSignUpForm()">Sign up.</a></p>
+                    <div id="sessionRoo" style="color:red"></div>
+                </form>
+
+            </div>
+
+            <!-- The section for sign up form for user -->
+            <div class="singUpForm" id="sign-up" style="display:none;">
+                <h2>Sign Up</h2>
+                <div id="signUpRoot" style="color:red"></div>
+                <!-- Form for users or customer to log in -->
+                <form name="registerUserForm">
+
+                    <div>
+                        <label>Email: </label><br>
+                        <input type="email" name="cEmail" placeholder="Enter your email">
+                    </div>
+                    <div>
+                        <label>Password:</label><br>
+                        <input type="password" name="cPassword" placeholder="enter password">
+                    </div>
+
+                    <div>
+                        <label>Confirm Password: </label><br>
+                        <input type="password" name="confirm_cPassword" placeholder="enter password again">
+                    </div>
+
+                    <input type="button" name="submit" value="Sign up" onclick="registerUser()">
+                    <p>Have account already? <a href="#" onclick="showLoginForm()">Log in.</a></p>
+                </form>
+            </div>
+
+
+        </div>
+
+
+        <!-- Footer -->
+        <div class="footer">
+            <button id="sd"><a href="tel:08065899144">&phone; Phone</a></button>
+            <button id="fr"><a href="mailto:alybaba2009@gmail.com?Subject=Mobile%20App%20Development"> <i class="fa fa-envelope icon"></i>
+                    Email</a></button>
+        </div>
+
+        <div class="bottommenu">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Contact</a>
+            <a href="#">Products</a>
+            <!-- <a href="#">Deals</a> -->
+            <!-- <a href="#">Stores</a> -->
+            <a href="#">Favourite</a>
+            <!-- <a href="#">Cart</a> -->
+            <a href="#">Blog</a>
+        </div>
+
+        <script src="./scripts/main.js"></script>
+</body>
+
+</html>

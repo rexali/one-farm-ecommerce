@@ -1,0 +1,364 @@
+*{
+    box-sizing: border-box;
+}
+
+/* Style the body */
+body {
+    font-family: Arial;
+    margin: 0;
+}
+
+/* Header/logo Title */
+.header {
+    padding:2px;
+    text-align: center;
+    background: #1abc9c;
+    color: white;
+}
+
+.sidenav{
+        height:100%;
+        width:0;
+        position:fixed;
+        z-index:1;
+        overflow-x:hidden;
+        padding-top:0px;
+        transition:0.5s;
+        background:white;
+    }
+
+.sidenav a{
+        padding:2px 2px;
+        text-decoration:none;
+        font-size:16px;
+        color:green;
+        display:block;
+        transition:0.3s;
+    }
+
+.sidenav .closebutton{
+        position:relative;
+        top:0;
+        font-size:30px;
+    }
+
+/* Style the top navigation bar */
+.navbar {
+    position:sticky;
+    top:0px;
+    display:flex;
+    background-color: white;
+    flex-direction:row;
+}
+
+.navbar button {
+    color: white;
+    background-color:green;
+    padding: 7px 7px;
+    text-decoration: none;
+    flex:25%;
+}
+
+.navbar button:hover {
+    background-color: yellow;
+    color: white;
+}
+
+div.topmenu{
+    position: sticky;
+    top:0;
+    /* left:0; */
+    background-color:green;
+    overflow:auto;
+    white-space:nowrap;
+    width: 100%;
+    /* text-align:center; */
+}
+
+
+div.topmenu a{
+        text-decoration:none;
+        display:inline-block;
+        padding:14px;
+        color:white;
+} 
+
+.topmenu{
+    display:none;
+}
+
+/* styling the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+   }
+
+/*style the login form */
+.input{
+    width: 100%;
+}
+
+
+.row-1,.row-2,.row-3,.row-4,.row-5,.row-6,.row-7{
+display:flex;
+flex-direction: column;
+text-align:center;
+}
+
+/* .row{
+    display:flex;
+    flex: 50%;
+    flex-direction:row;
+    text-align:;
+}
+/* .column{
+    flex: 25%;
+    width: 50%;
+}  */
+
+
+.scrollh{
+white-space:nowrap;
+overflow-x:auto;
+}
+
+.scrollh .card{
+display:inline-block;
+margin-bottom: 20px;
+}
+
+.scrollItems{
+white-space:nowrap;
+overflow:auto;
+}
+
+.scrollItems .card{
+display:inline-block;
+margin-bottom: 30px;
+margin-top: 10px;
+}
+
+.card{
+box-shadow:0 8px 16px 0 rgba(0,0,0,0.2);
+border-radius:5px;
+transition:0.3s;
+margin-bottom:20px;
+margin-left: 10px;
+margin-right: 10px;
+}
+.card:hover{
+box-shadow:0 16px 32px 0 rgba(0,0,0,0.2);
+}
+
+.container{
+padding:2px 16px;
+}
+
+img{
+border-radius:10px 10px 10px 10px;
+}
+
+h4{
+text-align:center;
+}
+
+
+#bg,#fm{
+    display: none;
+}
+
+.header{
+    display:none;
+}
+
+
+/* Footer */
+.footer {
+    position:sticky;
+    bottom:0;
+    background:white;
+    display:flex;
+
+}
+
+/* Style the footer button links */
+.footer button{
+        color: white;
+        background:green;
+        padding:7px 20px;
+        text-decoration: none;
+        flex:20%;
+}
+/* Style the footer bar links */
+.footer button a {
+        color: white;
+        text-decoration: none;
+}
+
+/* Change color on hover */
+.footer button:hover {
+    background-color:green;
+    color: black;
+}
+
+ul {
+    list-style-position: outside;
+    list-style-type:none;
+}
+
+/* style the class bottommenu */
+
+div.bottommenu{
+position:relative;
+bottom:0;
+left:0;
+background-color:#333;
+overflow:auto;
+white-space:nowrap;
+text-align:center;
+width: 100%;
+}
+
+/* style the links in the class bottommenu */
+div.bottommenu a{
+text-decoration:none;
+display:inline-block;
+padding:8px;
+color:white;
+}
+
+.bottommenu{
+    display:none;
+}
+
+/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other (also change the direction - make the "cart" column go on top) */
+@media (max-width: 800px) {
+
+/* .row {
+    flex-direction: column-reverse;
+} */
+
+
+}
+
+
+/* Orientation for mobile, tablet, laptop or desktop: portrait or landscape */
+@media screen and (orientation:landscape) {
+
+  body{
+      /* background-color:lightblue; */
+    }
+
+}
+
+/* For extra small phone or device  */
+@media only screen and (max-width : 600px) {
+
+    
+    
+}
+
+
+/* For small and large phone or portrait tablet */
+@media only screen and (min-width : 600px) {
+
+    /* .row-1,.row-2,.row-3,.row-4,.row-5,.row-6{
+        float: left;
+        width: 50%;
+        text-align: center;
+        }
+        
+    .row-7{
+         width: 100%;
+    }
+
+
+    .bottommenu{
+        display:inline-block;
+    }
+
+    .topmenu{
+        display:inline-block;
+    }
+
+
+    .navbar{
+        display: none;   
+       }
+
+    .footer{
+           display: none;   
+    } */
+
+}
+
+/* For medium devices eg landscape tablet */
+@media only screen and (min-width: 768px) {
+
+    .row-1,.row-2,.row-3,.row-4,.row-5,.row-6{
+        float: left;
+        width: 50%;
+        text-align: center;
+        }
+        
+    .row-7{
+         width: 100%;
+    }
+
+
+    
+
+}
+
+/* For large devices eg laptop and desktop*/
+@media only screen and (min-width: 992px) {
+
+    /* .row-1,.row-2,.row-3{
+        float: left;
+        width: 33.3%;
+        text-align: center;
+        }
+
+    .row-4,.row-5,.row-6,.row-7{
+        float: left;
+        width: 25%;
+        text-align: center;
+
+    } */
+        
+    /* .row-7{
+         width: 100%;
+    } */
+
+    .bottommenu{
+        display:inline-block;
+    }
+
+    .topmenu{
+        display:inline-block;
+    }
+
+
+    .navbar{
+        display: none;   
+       }
+
+    .footer{
+           display: none;   
+    }
+    .header{
+        display: block;
+    }
+
+
+
+}
+
+/* For extra large devices eg large laptop and desktop*/
+@media only screen and (min-width: 1200px) {
+
+
+
+}
